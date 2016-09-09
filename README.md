@@ -1,11 +1,15 @@
 # DockerMulti
 基于 docker 实现轻量级多用户环境
 
-### Usage:
+### Install
 
 1. git clone git@github.com:joway/DockerMulti.git
 2. cd DockerMulti
-3. python docker_multi_ssh.py 10 # create 10 ssh docker server
+3. pip install -r requirements.txt
+
+### Usage:
+
+1. python docker_multi_ssh.py 10 # create 10 ssh docker server
 
     output:
 
@@ -23,6 +27,6 @@
     INFO:docker-mutil-ssh:{'Id': '49073a318c044039046cf6992c4bac5839149b80f5cdc85068093dddaa57dc6b', 'Warnings': None}
 
     ......
-4. get your machine's ip (example: 123.100.100.12)
-5. ssh root@123.100.100.12 -p 64060 # the password for port 64060 is XG5MFTYUTGWR
-6. you can custom the Dockerfile to create the environment you want
+2. get your machine's ip (example: 123.100.100.12)
+3. ssh root@123.100.100.12 -p 64060 # the password for port 64060 is XG5MFTYUTGWR
+4. you can custom the Dockerfile to create the environment you want
