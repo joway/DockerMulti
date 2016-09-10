@@ -9,7 +9,7 @@
 
 ### Usage:
 
-1. `python docker_multi_ssh.py 10 # create 10 ssh docker server`
+1. `python docker_multi_ssh.py 10 --mem 128` # create 10 ssh docker server with 128M mem limit
 
     output:
 

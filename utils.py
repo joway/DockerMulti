@@ -6,7 +6,7 @@ from container import Container
 SSH_IMAGE = 'joway/docker-ssh'
 
 
-def create_ssh_container(hostname, password=None, ssh_port=12222):
+def create_ssh_container(hostname, password=None, ssh_port=12222, mem_limit=128):
     if password:
         ENV = {'ROOT_PASS': password}
     else:

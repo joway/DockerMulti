@@ -5,9 +5,10 @@ from utils import create_ssh_container, random_hostname, random_pwd, random_port
 parser = argparse.ArgumentParser(description='Docker Multi SSH')
 parser.add_argument('number', type=int,
                     help='The number of the ssh-server containers you want to created')
-
+parser.add_argument('--mem', type=int, help='limit mem', default=128)
 args = parser.parse_args()
 count = args.number
+mem_limit = args.mem
 
 ssh_servers = []
 tmp_ports = set()
@@ -25,5 +26,5 @@ for i in range(0, count):
     })
 
 for server in ssh_servers:
-    container = create_ssh_container(server['hostname'], server['password'], server['ssh_port'])
+    container = create_ssh_container(server['hostname'], server['password'], server['ssh_port'], mem_limit=mem_limit)
     container.start()

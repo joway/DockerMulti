@@ -12,11 +12,13 @@ RUN apt-get clean \
 RUN mkdir -p /var/run/sshd \
     && sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
+ADD ./endpoint.sh /tmp/endpoint.sh
+RUN chmod +x /tmp/endpoint.sh
+
 ENV HOME /root
 
 WORKDIR /root
-
-ADD ./endpoint.sh /tmp/endpoint.sh
+VOLUME /root
 
 EXPOSE 22
 CMD ["sh","/tmp/endpoint.sh"]
