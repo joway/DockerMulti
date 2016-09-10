@@ -18,11 +18,11 @@ def log(func):
 
 
 class Container(object):
-    def __init__(self, name, image, env=None, port_bindings=None, detach=False):
+    def __init__(self, name, image, env=None, port_bindings=None, detach=False, mem_limit=None):
         self.name = name
         self.image = image
         self.env = env
-        self.host_config = cli.create_host_config(port_bindings=port_bindings)
+        self.host_config = cli.create_host_config(port_bindings=port_bindings, mem_limit=mem_limit)
         self.detach = detach
         self.id = self.create_container()['Id']
 

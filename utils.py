@@ -15,7 +15,8 @@ def create_ssh_container(hostname, password=None, ssh_port=12222):
         22: ssh_port,
     }
     print('\n host:%s   port: %d    password: %s\n' % (hostname, ssh_port, password))
-    return Container(name='ssh-' + hostname, image=SSH_IMAGE, env=ENV, port_bindings=port_bindings, detach=True)
+    return Container(name='ssh-' + hostname, image=SSH_IMAGE, env=ENV, port_bindings=port_bindings, detach=True,
+                     mem_limit=512 * 1024 * 1024)
 
 
 def random_pwd(length=12):
