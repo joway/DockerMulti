@@ -1,5 +1,7 @@
 # DockerMulti
-基于 docker 实现轻量级多用户环境
+
+Lightweight isolation environment among multiple users- base on docker
+
 
 ### Install
 
